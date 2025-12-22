@@ -1,0 +1,19 @@
+{
+  "name": "@mmyoji/ntt-skyway",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "vite build",
+    "dev": "vite",
+    "preview": "vite preview"
+  },
+  "author": "mmyoji",
+  "license": "ISC",
+  "dependencies": {
+    "@skyway-sdk/room": "^2.2.1"
+  },
+  "devDependencies": {
+    "vite": "^7.3.0"
+  }
+}
