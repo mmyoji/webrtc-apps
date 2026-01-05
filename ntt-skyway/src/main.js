@@ -57,7 +57,10 @@ const token = new SkyWayAuthToken({
     myId.textContent = me.id;
 
     await me.publish(audio, { type: "p2p" });
-    await me.publish(video, { type: "p2p" });
+    await me.publish(video, {
+      type: "p2p",
+      encodings: [{ maxBitrate: 300 * 1000 /* 300K bps */ }],
+    });
 
     const subscribeAndAttach = (publication) => {
       if (publication.publisher.id === me.id) return;
