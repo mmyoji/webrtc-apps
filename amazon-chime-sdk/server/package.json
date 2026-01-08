@@ -1,0 +1,20 @@
+{
+  "name": "@mmyoji/amazon-chime-sdk-server",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "main": "main.ts",
+  "scripts": {
+    "dev": "node --experimental-strip-types main.ts"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "@aws-sdk/client-chime-sdk-meetings": "^3.962.0",
+    "cors": "^2.8.5",
+    "express": "^5.2.1"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.6"
+  }
+}
