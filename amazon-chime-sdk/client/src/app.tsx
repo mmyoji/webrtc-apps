@@ -5,9 +5,9 @@ import {
   LogLevel,
   MeetingSessionConfiguration,
 } from "amazon-chime-sdk-js";
+import type { SubmitEventHandler } from "preact";
 import { useState } from "preact/hooks";
 
-import type { SubmitEventHandler } from "preact";
 import "./app.css";
 
 export function App() {

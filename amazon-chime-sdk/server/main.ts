@@ -31,9 +31,11 @@ app.post("/meetings", async (req, res) => {
     // Any meeting ID you wish to associate with the meeting.
     ExternalMeetingId: req.body.externalMeetingId,
 
-    // Setup meeting features, such as audio / video settings, max attendees, etc.
-    MeetingFeatures: {},
+    // This must be unset when `PrimaryMeetingId` is set.
+    // // Setup meeting features, such as audio / video settings, max attendees, etc.
+    // MeetingFeatures: {},
 
+    // This creates `a replica meeting`, so I think we just reuse the primaryMeeting and not create a new one.
     ...(primaryMeeting?.Meeting?.MeetingId != null
       ? { PrimaryMeetingId: primaryMeeting.Meeting?.MeetingId }
       : {}),
@@ -45,6 +47,8 @@ app.post("/meetings", async (req, res) => {
     // Any user ID you wish to associate with the attendee.
     ExternalUserId: req.body.userId,
   });
+
+  console.log(JSON.stringify(meeting));
 
   // The client uses these values for `new MeetingSessionConfiguration(meeting, attendee)`
   res.json({
